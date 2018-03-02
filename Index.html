@@ -2,24 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ht2</title>
+    <title>ProgresBar</title>
+
+<style>
+    #add-number{
+        width: 20px;
+        background-color: red;
+        height: 20px;
+    }
+.progresbar{
+    height:150px;width:2%;border:2px solid gray;background-color:lightblue;
+}
+
+</style>
 </head>
 <body>
-<button id="myBtn">Try it</button>
-<p id="demo"></p>
+<label  id="add-number">0</label>
+<div class="progresbar" ></div><br>
+<button id="Click_My">Show</button>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
- x =document.getElementById("myBtn");
- x.addEventListener("click", myFunction);
- x.addEventListener("click", someOtherfunction);
+    var counter = 0;
+    var number = 0;
+    var max_iteration = 7;
+    var prozent= 100/max_iteration;
+    $(document).ready(function(){
+            $("#Click_My").click(function(){
+                if(number<=max_iteration-1){
+                    counter=counter+prozent;
+                    number++;
+                    $(".progresbar").width(counter + '%');
+                    $("#add-number").text(number + '/' + max_iteration);
+                }else{
+                    counter=0;
+                    number=0;
+                    $(".progresbar").width(counter + '%');
+                    $("#add-number").text(number + '/' + max_iteration);
+                }
 
- function myfunction(){
-     alter("Hllo World");
- }
-function someOtherFunction() {
-     alter("This was also executed");
+            });
 
-}
-</script>
+    })
+    </script>
+
 
 </body>
 </html>
