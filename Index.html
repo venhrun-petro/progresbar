@@ -36,7 +36,7 @@
     $(document).ready(function(){
         $("#Click_My").click(function(){
             if(number<=max_iteration-1){
-                counter=counter+prozent;
+                counter+=prozent;
                 number++;
                 $(".progresbar").width(counter + '%');
                 $("#add-number").text(number + '/' + max_iteration);
