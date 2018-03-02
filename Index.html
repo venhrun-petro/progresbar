@@ -7,11 +7,11 @@
     <style>
         #add-number{
             width: 20px;
-            background-color: red;
             height: 20px;
         }
         .progresbar{
-            height:30px;width:2%;background-color:green;
+            height:30px;width:2%;
+            background: linear-gradient(to bottom, #b4e391 0%,#61c419 50%,#b4e391 100%);
             transition: all 0.5s ;
         }
         .cont-bar{
@@ -22,7 +22,7 @@
     </style>
 </head>
 <body>
-<label  id="add-number">0</label>
+<label  id="add-number">1/7</label>
 <div class="cont-bar">
     <div class="progresbar" ></div></div><br>
 <button id="Click_My">Show</button>
@@ -33,6 +33,7 @@
     var number = 0;
     var max_iteration = 7;
     var prozent= 100/max_iteration;
+
     $(document).ready(function(){
         $("#Click_My").click(function(){
             if(number<=max_iteration-1){
