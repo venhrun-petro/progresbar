@@ -4,21 +4,27 @@
     <meta charset="UTF-8">
     <title>ProgresBar</title>
 
-<style>
-    #add-number{
-        width: 20px;
-        background-color: red;
-        height: 20px;
-    }
-.progresbar{
-    height:150px;width:2%;border:2px solid gray;background-color:lightblue;
-}
+    <style>
+        #add-number{
+            width: 20px;
+            background-color: red;
+            height: 20px;
+        }
+        .progresbar{
+            height:30px;width:2%;background-color:green;
+            transition: all 0.5s ;
+        }
+        .cont-bar{
+            border: 1px solid black;
+            width: 100%;
+        }
 
-</style>
+    </style>
 </head>
 <body>
 <label  id="add-number">0</label>
-<div class="progresbar" ></div><br>
+<div class="cont-bar">
+    <div class="progresbar" ></div></div><br>
 <button id="Click_My">Show</button>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -28,23 +34,23 @@
     var max_iteration = 7;
     var prozent= 100/max_iteration;
     $(document).ready(function(){
-            $("#Click_My").click(function(){
-                if(number<=max_iteration-1){
-                    counter=counter+prozent;
-                    number++;
-                    $(".progresbar").width(counter + '%');
-                    $("#add-number").text(number + '/' + max_iteration);
-                }else{
-                    counter=0;
-                    number=0;
-                    $(".progresbar").width(counter + '%');
-                    $("#add-number").text(number + '/' + max_iteration);
-                }
+        $("#Click_My").click(function(){
+            if(number<=max_iteration-1){
+                counter=counter+prozent;
+                number++;
+                $(".progresbar").width(counter + '%');
+                $("#add-number").text(number + '/' + max_iteration);
+            }else{
+                counter=0;
+                number=0;
+                $(".progresbar").width(counter + '%');
+                $("#add-number").text(number + '/' + max_iteration);
+            }
 
-            });
+        });
 
     })
-    </script>
+</script>
 
 
 </body>
