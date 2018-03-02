@@ -10,19 +10,18 @@
             height: 20px;
         }
         .progresbar{
-            height:30px;width:2%;
+            width:0;
             background: linear-gradient(to bottom, #b4e391 0%,#61c419 50%,#b4e391 100%);
             transition: all 0.5s ;
         }
-        .cont-bar{
+        .cont-styl{
             border: 1px solid black;
-            width: 100%;
         }
 
     </style>
 </head>
 <body>
-<label  id="add-number">1/7</label>
+<label  id="add-number"></label>
 <div class="cont-bar">
     <div class="progresbar" ></div></div><br>
 <button id="Click_My">Show</button>
@@ -41,11 +40,15 @@
                 number++;
                 $(".progresbar").width(counter + '%');
                 $("#add-number").text(number + '/' + max_iteration);
+                $(".progresbar").height('30px');
+                $(".cont-bar").addClass("cont-styl");
             }else{
                 counter=0;
                 number=0;
                 $(".progresbar").width(counter + '%');
-                $("#add-number").text(number + '/' + max_iteration);
+                $("#add-number").text('');
+                $(".progresbar").height('0');
+                $(".cont-bar").removeClass("cont-styl");
             }
 
         });
